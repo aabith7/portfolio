@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #080808;
+    color: white;
+}
+
+/* Header */
+#header {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.name {
+    padding: 2%;
+    font-size: 2rem;
+}
+
+/* Profile Image and Intro */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+.navbar {
+    list-style-type: none;
+}
+
+.navbar li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.navbar a:hover {
+    color: red; 
+}
+
+
+.name-details {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.name-details h3 {
+    margin-bottom: 10px;
+}
+
+.name-details button {
+   background-color: black;
+   color: white;
+   font-size: 1.2rem;
+   padding: 10px 20px;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-top: 20px;
+}
+
+.proimg img {
+    height: 550px;
+    width:100%;
+    border-radius: 30%;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.proimg img:hover {
+    transform: scale(1.3);
+}
+
+/* About Section */
+#container {
+    text-align: center;
+    padding: 5%;
+}
+
+.col2 h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.col2 p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+/*skills*/
+.skillimg img{
+    height: 220px;
+    width: 220px;
+    border-radius: 100%;
+    padding: 2.5%;
+}
+.skilltitle h1{
+    margin: 3%;
+    font-size: 2.5rem;
+}
+
+/* Projects Section */
+#projects {
+    padding: 5%;
+    text-align: center;
+}
+
+.project-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.project-details, .pro2 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.opensource, .face-rec, .house-price, .portfolio {
+    background-color: #151515;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.opensource img, .face-rec img, .house-price img, .portfolio img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.opensource button, .face-rec button, .house-price button, .portfolio button {
+    background-color: red;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Contact Section */
+#contact {
+    padding: 5%;
+    background-color: #151515;
+    color: white;
+}
+
+.containerhead {
+    align-items: center;
+}
+
+.leftside {
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+.leftside h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.leftside p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.socialicon a {
+    text-decoration: none;
+    font-size: 28px;
+    margin-right: 10%;
+    color: #ababab;
+    transition: transform 0.3s ease;
+}
+
+.socialicon a:hover {
+    color: red;
+    transform: translateY(-5px);
+}
+
+
+
+
+button {
+    background-color: red;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
