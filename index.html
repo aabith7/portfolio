@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aabith - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #1a1a1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            background: #2c2c2c;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e0e0e0;
+        }
+        .logo span {
+            color: #00b4d8;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #00b4d8;
+        }
+
+        /* Home Section */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('J4o.gif') no-repeat center/cover,
+                        #3d3a3a; /* Fallback color */
+            color: #f6f5f5;
+            padding: 2rem;
+        }
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            text-align: left;
+            max-width: 600px;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .hero-content h1 span {
+            color: #00b4d8;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .hero-btn {
+            background: #00b4d8;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 400;
+            transition: background 0.3s;
+            margin: 0 0.5rem;
+        }
+        .hero-btn:hover {
+            background: #03181a;
+        }
+        .profile-img {
+            width: 400px;
+            height: 450px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* About Section */
+        #about {
+            padding: 5rem 2rem;
+            background: #2c2c2c;
+            text-align: center;
+        }
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #e0e0e0;
+        }
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #b3b3b3;
+        }
+
+        /* Skills Section */
+        #skills {
+            padding: 5rem 2rem;
+            background: #1a1a1a;
+            text-align: center;
+        }
+        #skills h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .skill-item {
+            background: #333;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+        .skill-item i {
+            font-size: 2rem;
+            color: #00b4d8;
+            margin-bottom: 0.5rem;
+        }
+        .skill-item p {
+            font-size: 1rem;
+            color: #e0e0e0;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 5rem 2rem;
+            background: #2c2c2c;
+            text-align: center;
+        }
+        #projects h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .project-card {
+            background: #333;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #e0e0e0;
+        }
+        .project-card p {
+            font-size: 1rem;
+            color: #b3b3b3;
+            margin-bottom: 1rem;
+        }
+        .project-btn {
+            background: #00b4d8;
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .project-btn:hover {
+            background: #0093b8;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 5rem 2rem;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            text-align: center;
+        }
+        #contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .contact-info i {
+            color: #00b4d8;
+            margin-right: 0.5rem;
+        }
+        .social-links a {
+            color: #e0e0e0;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #00b4d8;
+        }
+
+        /* Footer */
+        footer {
+            padding: 1rem;
+            text-align: center;
+            background: #2c2c2c;
+            color: #b3b3b3;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .nav-links {
+                margin-top: 1rem;
+                gap: 1rem;
+            }
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content {
+                text-align: center;
+                max-width: 100%;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .hero-btn {
+                padding: 0.6rem 1.5rem;
+                margin: 0.5rem 0;
+            }
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo"><span>A</span>abith</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Hello, I'm <span>Aabith</span></h1>
+                <p>A passionate developer specializing in Python and Machine Learning</p>
+                <a href="#contact" class="hero-btn">Get in Touch</a>
+                <a href="Aabith - Resume.pdf" class="hero-btn" download>Download Resume</a>
+            </div>
+            <img src="profileimage.png" alt="Aabith Profile" class="profile-img">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About <span style="color: #00b4d8;">Me</span></h2>
+        <p>I’m a [your Developer passionate about Machine Learning and artificial intelligence . With 2 of experience, I excel in Machine Learning model building and SDLC  and am driven by building some useful and live projects .  I’m excited to make some contribution to world of ai and data science .  <br> Let’s connect!</p></section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item"><i class="fab fa-python"></i><p>Python</p></div>
+            <div class="skill-item"><i class="fas fa-brain"></i><p>Machine Learning</p></div>
+            <div class="skill-item"><i class="fab fa-python"></i><p>Pandas</p></div> <!-- Reused fa-python -->
+            <div class="skill-item"><i class="fas fa-chart-line"></i><p>Matplotlib</p></div> <!-- Chart icon for plotting -->
+            <div class="skill-item"><i class="fas fa-flask"></i><p>Flask</p></div> <!-- Flask icon -->
+            <div class="skill-item"><i class="fab fa-aws"></i><p>AWS</p></div> <!-- AWS icon -->
+            <div class="skill-item"><i class="fab fa-github"></i><p>GitHub</p></div> <!-- Reused fa-github -->
+            <div class="skill-item"><i class="fas fa-brain"></i><p>Deep Learning</p></div> <!-- Reused fa-brain -->
+            <div class="skill-item"><i class="fas fa-network-wired"></i><p>Neural Networks</p></div> <!-- Network icon -->
+            <div class="skill-item"><i class="fas fa-camera"></i><p>OpenCV</p></div> <!-- Camera for computer vision -->
+            <div class="skill-item"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+            <div class="skill-item"><i class="fab fa-html5"></i><p>HTML</p></div>
+            <div class="skill-item"><i class="fab fa-github"></i><p>GitHub</p></div>
+            <div class="skill-item"><i class="fas fa-spider"></i><p>Web Scraping</p></div> <!-- Spider for web crawling -->
+            <div class="skill-item"><i class="fas fa-search"></i><p>EDA</p></div> <!-- Magnifying glass for exploration --> 
+            <div class="skill-item"><i class="fas fa-rocket"></i><p>Model Deployment</p></div>
+            
+            
+            
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>FootBall Player Detection</h3>
+                <p>Build using the YOLO V5m model </p>
+                <a href="https://github.com/aabith7/footballl.git" class="project-btn">View Project</a>
+                <a href="https://drive.google.com/file/d/1YhMcnexZyU1iADVjJYIFwe-5yCgb4Ush/view" class="project-btn">output Vedio</a>
+            </div>
+            <div class="project-card">
+                <h3>Face Recognition</h3>
+                <p>A real-time face recognition system using the KNN algorithm.</p>
+                <a href="https://github.com/aabith7/face-recoganation" class="project-btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>House Price Prediction</h3>
+                <p>A predictive model using  MultiLinear regression to estimate house prices.</p>
+                <a href="https://github.com/aabith7/house-price-prediction" class="project-btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>A clean and responsive personal portfolio built with HTML and CSS.</p>
+                <a href="https://github.com/aabith7/portfolio" class="project-btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Open Source Contribution</h3>
+                <p>scraped a website and contributed the open source community {KAAGLE} </p>
+                <a href="https://github.com/aabith7/open-source-Book-Data-Web-Scraping-and-Kaggle-Contribution" class="project-btn">View Project</a>
+                <a href="https://www.kaggle.com/datasets/aabith7/book-and-their-price-dataset" class="project-btn">KAAGLE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:aabith1853@gmail.com" class="email-link"><i class="fas fa-envelope"></i>aabith1853@gmail.com</a></p>
+            <p><i class="fas fa-phone"></i>+91 9443683982</p>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/aabith-n-9b2434269/"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/aabith7"><i class="fab fa-github"></i></a>
+            <a href="https://wa.me/qr/SQAUF7LLRIS2N1"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Aabith. All rights reserved & Made with Learning ❤️</p>
+        
+    </footer>
+</body>
+</html>
